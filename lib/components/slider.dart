@@ -15,8 +15,8 @@ class _BannerSliderState extends State<BannerSlider> {
 
   final List<SliderModel> sliders = [
     SliderModel(image: "assets/images/banner.png"),
-    SliderModel(image: "assets/images/banner.png"),
-    SliderModel(image: "assets/images/banner.png"),
+    SliderModel(image: "assets/images/banner2.png"),
+    SliderModel(image: "assets/images/banner3.png"),
   ];
 
   @override
