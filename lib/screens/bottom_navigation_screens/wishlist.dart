@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../components/address.dart';
 import '../../components/product_card.dart';
 import '../../model/data.dart';
 
@@ -9,16 +10,24 @@ class Wishlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.yellowAccent,
-        child: ListView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          itemCount: products.length,
-          itemBuilder: (context, index) {
-            return ProductCard(
-              product: products[index],
-            );
-          },
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              color: Colors.yellowAccent,
+              child: Address(address: 'humdard nagar b'),
+            ),
+
+            // ✅ Expanded yahan use hoga
+            Expanded(
+              child: ListView.builder(
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  return ProductCard(product: products[index],  isHorizontal: true,);
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
